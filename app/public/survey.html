@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script>
+            $(function() {
+              $('.chosen-select').chosen();
+              $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+            });
+          </script>
+    </head>
+<body>
+    <div class="container">
+        <!-- <div class="row"> -->
+            <h1>Survey Questions</h1>
+            <br>
+            <hr>
+            <h2>Your Info</h2>
+            <input type="text" id="name" class="form-control"> 
+            <h3>Question 1</h3>
+            <hr>
+            <h3>Question 2</h3>
+            <h4>You like fruit</h4>
+            <select class="chosen-select" id="q8" style="display: none;">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                  <div class="chosen-container chosen-container-single" style="width: 157px;" title="" id="q8_chosen"><a class="chosen-single chosen-default"><span>Select an Option</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
+            <hr>
+            <h3>Question 3</h3>
+            <hr>
+            <h3>Question 4</h3>
+            <hr>
+            <h3>Question 5</h3>
+            <hr>
+            <h3>Question 6</h3>
+            <hr>
+            <h3>Question 7</h3>
+            <hr>
+            <h3>Question 8</h3>
+            <hr>
+            <h3>Question 9</h3>
+            <hr>
+            <h3>Question 10</h3>
+            <hr>
+        <!-- </div> -->
+    </div>
+    <script type="text/javascript">
+     // Chosen CSS
+     var config = {
+      ".chosen-select": {},
+      ".chosen-select-deselect": {
+        allow_single_deselect: true
+      },
+      ".chosen-select-no-single": {
+        disable_search_threshold: 10
+      },
+      ".chosen-select-no-results": {
+        no_results_text: "Oops, nothing found!"
+      },
+      ".chosen-select-width": {
+        width: "95%"
+      }
+    };
+
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "express app using GET and POST, survey comparisons on backend. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmez/friendFinder.git"
+  },
+  "keywords": [
+    "express",
+    "survey",
+    "friendFinder"
+  ],
+  "author": "keagan cheatwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohmez/friendFinder/issues"
+  },
+  "homepage": "https://github.com/ohmez/friendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

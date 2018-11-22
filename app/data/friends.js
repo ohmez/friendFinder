@@ -1,8 +1,8 @@
 var availFriends = [
     {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores":[
+        name:"Ahmed",
+        photo:"https://picsum.photos/200/300",
+        scores:[
             5,
             1,
             4,
@@ -14,7 +14,10 @@ var availFriends = [
             4,
             1
           ]
-      }
+      },
+      { name: 'jimmy',
+  photo: 'https://picsum.photos/300/300',
+  scores: [ 3, 1, 3, 4, 4, 5, 5, 4, 1, 3] }
 ];
 
 module.exports = availFriends;

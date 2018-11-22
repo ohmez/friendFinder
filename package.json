@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ohmez/friendFinder#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "path": "^0.12.7"
   }
 }

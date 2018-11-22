@@ -13,7 +13,7 @@ Finally open node to the root directory of the clone and run `node welcome`.
 [Screenshots](#Screenshots)
 
 ### Process
-I started with a skeleton build of all the files and folders outlined. 
+I started with a skeleton build of all the files and folders outlined in our instructions.
 ```
   FriendFinder
     - .gitignore
@@ -30,37 +30,42 @@ I started with a skeleton build of all the files and folders outlined.
     - package.json
     - server.js
 ```
+Then I initiated my node package with an npm i.
+Then installed express and path, which are the two dependencies we have. 
 
+#### Server.js
+First initiating the connection to my local host and making sure the server routes are established. 
+To keep the server.js file clean and condensed the routes are stored in seperate js files.
+```js
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
+```
+This connects the app function to both `routes.js` files for viewing data in html or sending as JSON content with the API. 
+Now that the server listens on the designated port I started working on my routes.
 
-I started with building the database [Schema](schema.sql). 
-I've had experience working with SQL and databases so this went very smoothly. 
-Once the database was built I started with the [Javascript welcome file](welcome.js).
-I first established a connection to the database then populated all the contents to the `console` to confirm it worked.
-Then I ran into issue 1 of calling to the database with variables. 
-Issue 2 was more of a challenge I gave myself to simplify my code. 
-Once I had the established `inquirer.prompt()`'s it was all switches and `connection.query()`'s from there.
-This all went very smoothly and once I wrote out a successful query in most cases I put it into a function and created the parameters for the variables. 
-I really enjoy building functions and callbacks instead of writing out things multiple times.
+#### Routing
+Because these `.js` files are seperate from the server they MUST have
+```js
+module.exports = function(app) {
+  app.get('/', (req, res) => {
+       res.sendFile(path.join(__dirname, './../public/home.html'));
+    })
+};
+```
+
+#### Comparison
+This was a tricky part to do within the `get.post()` since we haven't returned new data after a post before, plus we've never used modal's before.
+So many for loops and if statements, there's got to be a better way to do this. 
 
 
 ### Issues
-1. 
-Once I wrote the first inquirer prompt and thought about how often I'd have to use inquirer I realized I wanted to build it out as a function.
-```js
-function promptList(name, choices, message, callback) {
-    inquirer.prompt({
-        name: name,
-        type: 'list',
-        message: message,
-        choices: choices
-    }).then( answers => {
-        callback(answers);
-    })
-};
-function openStore() { promptList('action',storeOptions,'Welcome to bamazon',returnPrompt); };
-```
-I was happy to find that stacking variables like this works very smoothly and allowed me to condense my code greatly. 
-
+1. [Survey](app/public/survey.html)
+I've struggled to get the bootstrap chosen.js to work for making the drop down selections. 
+I've reviewed the example and found all the `<script>`'s and `<link>`'s and copied those into my code.
+I even copied one of the questions from the example page and I could get my drop down home styled but when clicked nothing would happen.
+I finally tried copying the entire HTML page of the example from the source inspection tool in chrome.
+I Pasted this into a test.html file and all the drop downs work for making your selections. I have no idea how this is working but when I tried to build my own it wouldn't work. This took up a lot of time trying to get `chosen.js` to work properly. 
+I still don't know what I was missing to make this work, I swear I had all the links set up correctly and evertying. 
 2. 
 I initially ran into an issue with communicating with the database using `.query(sqlQuery,options,callback)` and using the parameter `options` because I learned it using an object like `{name: name}`.
 ```js

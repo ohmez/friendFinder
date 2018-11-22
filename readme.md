@@ -58,6 +58,8 @@ This was a tricky part to do within the `get.post()` since we haven't returned n
 So many for loops and if statements, there's got to be a better way to do this. 
 
 
+
+
 ### Issues
 1. [Survey](app/public/survey.html)
 I've struggled to get the bootstrap chosen.js to work for making the drop down selections. 
@@ -67,13 +69,10 @@ I finally tried copying the entire HTML page of the example from the source insp
 I Pasted this into a test.html file and all the drop downs work for making your selections. I have no idea how this is working but when I tried to build my own it wouldn't work. This took up a lot of time trying to get `chosen.js` to work properly. 
 I still don't know what I was missing to make this work, I swear I had all the links set up correctly and evertying. 
 2. 
-I initially ran into an issue with communicating with the database using `.query(sqlQuery,options,callback)` and using the parameter `options` because I learned it using an object like `{name: name}`.
-```js
-var newSql = 'INSERT INTO products (item_name, department_name, price, avail_quantity) VALUES (?,?,?,?)';
- connection.query(newSql,[answers.name, answers.department, answers.price, answers.quantity], (err,res) =>{
-            if(err) {console.log(err.sqlMessage), openStore();}
-```
-It wasn't a big issues but it required me to go to their website and look into the parameters syntax more for the `options`.  
+I had a lot of issues around posting data, using postman compared to testing it in the browswer caused different instances of data.
+Even when I tried to use all the headers in the browser for postman I still sent data differently.
+Passing in an array of integers was not working smoothly for me.
+
 
 
 ### Screenshots

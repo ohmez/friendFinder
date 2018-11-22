@@ -7,13 +7,10 @@ module.exports = function(app) {
         res.json(friendsData);
     });
     app.post('/api/friends', (req,res) =>{
-        console.log(req.headers);
-        console.log(req.route);
-        console.log(req.body);
-        console.log('\n')
+       
         var availFriends = friendsData;
         var newFriend = req.body;
-        console.log(availFriends);
+        
         var newScores = newFriend.scores;
         var scoresOrder = [];
         for(x=0; x<availFriends.length; x++) {
@@ -35,8 +32,11 @@ module.exports = function(app) {
         console.log(scoresOrder);
         for(z=0; z<scoresOrder.length -1; z++) {
             if(scoresOrder[z].diff > scoresOrder[z+1].diff) {
-                scoresOrder.splice(z,1)
+                scoresOrder.splice(z,1);
                 z=0;
+            }
+            if(scoresOrder[z+1] > scoresOrder[z]) {
+                scoresOrder.splice((z+1),1);
             }
         }
         console.log(scoresOrder);

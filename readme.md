@@ -10,7 +10,7 @@ All the looping I had to do in order to make the `apiRoutes.js` process correctl
 
 [Issues](#Issues)
 
-[Deployed](#)
+[Deployed](https://keagans-friend-finder.herokuapp.com/)
 
 ### Process
 I started with a skeleton build of all the files and folders outlined in our instructions.
@@ -108,4 +108,4 @@ for (var z = 0; z < scoresOrder.length; z++) {
 ```
 
 ### I'm deployed
-[link](address)
+[link](https://keagans-friend-finder.herokuapp.com/)
